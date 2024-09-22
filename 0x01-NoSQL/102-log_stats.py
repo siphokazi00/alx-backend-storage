@@ -3,6 +3,7 @@
 
 from pymongo import MongoClient
 
+
 def print_log_stats():
     client = MongoClient('mongodb://127.0.0.1:27017')
     nginx_collection = client.logs.nginx
@@ -19,7 +20,8 @@ def print_log_stats():
         print(f"\tmethod {method}: {method_count}")
 
     # Status check
-    status_check = nginx_collection.count_documents({"method": "GET", "path": "/status"})
+    status_check = nginx_collection.count_documents(
+            {"method": "GET", "path": "/status"})
     print(f"{status_check} status check")
 
     # Top 10 IPs
@@ -44,6 +46,7 @@ def print_log_stats():
 
     for ip in top_ips:
         print(f"\t{ip['_id']}: {ip['count']}")
+
 
 if __name__ == "__main__":
     print_log_stats()
