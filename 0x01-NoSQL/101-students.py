@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
-# 101-students.py
+"""
+101-students.py
+"""
 
 
 def top_students(mongo_collection):
+    """
+    Returns all students sorted by average score
+    """
     students = mongo_collection.find()
     result = []
 

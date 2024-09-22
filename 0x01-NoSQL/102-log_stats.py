@@ -5,6 +5,9 @@ from pymongo import MongoClient
 
 
 def print_log_stats():
+    """
+    Improves 12-log_stats.py by adding most present IPs
+    """
     client = MongoClient('mongodb://127.0.0.1:27017')
     nginx_collection = client.logs.nginx
 
