@@ -1,0 +1,2 @@
+// 3-all.js
+db.school.find().forEach(printjson);

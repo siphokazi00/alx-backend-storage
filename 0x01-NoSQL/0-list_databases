@@ -1,0 +1,2 @@
+// 0-list_databases.js
+printjson(db.adminCommand('listDatabases'));
